@@ -1,14 +1,16 @@
 manifest:
-  defaults:
-    revision: v0.3
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+      url_base: https://github.com/zmkfirmware
+    - name: kumamuk
+      url_base: https://github.com/kumamuk-git
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: main
       import: app/west.yml
+    - name: roBa
+      remote: kumamuk
+      revision: main
   self:
     path: config
